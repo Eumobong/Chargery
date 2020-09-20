@@ -1,7 +1,7 @@
 # Chargery
 Retrieve data from chargery bms BMS24T or BMS16T or BMS8T through rs232 to USB cable and post to MQtt server. 
 
-Special credit to nuno for his solpiplog, Joe Elliot
+
 ##### Read installation step after the following notes 
 
 ##### Note1: change the line devName = '/dev/ttyUSB0' to suit your USB connection port
