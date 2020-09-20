@@ -13,7 +13,7 @@ Special credit to nuno for his solpiplog, Joe Elliot
 ##### Note4: you have to install paho-mqtt using pip; run sudo pip install paho-mqtt
 
 
-##### Publish topics: 
+##### Default Publish topics: 
 1 chargerybms/watthour #watthour
 
 2 chargerybms/amphour #amphour 
@@ -50,13 +50,16 @@ Special credit to nuno for his solpiplog, Joe Elliot
 
 It is assumed that your have mqtt server, pyserial paho-mqtt installed
 
-2a) copy chargery.py to /home/pi directory
-2b) create a a log file named chargery.log in /home/pi
-2c) make the log file writable if it's not
+1a) copy chargery.py to /home/pi directory
 
-1) copy chargery.service to /lib/systemd/system directory
+1b) create a a log file named chargery.log in /home/pi
 
-2) run the following commands  in terminal
+1c) make the log file writable if it's not
+
+
+2) copy chargery.service to /lib/systemd/system directory
+
+3) run the following commands  in terminal
 
 	sudo chomd 644 /lib/systemd/system/chargery.service
 	
