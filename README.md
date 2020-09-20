@@ -8,8 +8,9 @@ Note2: if your MQTT server is password protected uncomment client.username_pw_se
 Note3: if your mqtt server is on another system replace the ipaddress 127.0.01 and port 1883 as the case may be
 Note4: you have to install paho-mqtt using pip; run sudo pip install paho-mqtt
 
-Publish topics:
+##### Publish topics: #####
 1 chargerybms/watthour #watthour
+
 2 chargerybms/amphour #amphour 
 3 chargerybms/batteryvolt #battery string voltage
 4 chargerybms/cellhigh #highest cell voltage
@@ -26,7 +27,7 @@ Publish topics:
 Note5: if you need individual cell voltages and cell impedances published, uncomment same in the script
 Note6: if you don't have pyserial install from pip
 
-Installation steps:
+## Installation steps:##
 It is assumed that your have mqtt server, pyserial paho-mqtt installed
 2) copy chargery.py and chargery.log to /home/pi directory
 1) copy chargery.service to /lib/systemd/system directory
