@@ -48,7 +48,7 @@ Special credit to nuno for his solpiplog, Joe Elliot
 
 ## Installation steps:
 
-It is assumed that your have mqtt server, pyserial paho-mqtt installed
+It is assumed that you have mqtt server, pyserial paho-mqtt installed
 
 1a) copy chargery.py to /home/pi directory
 
