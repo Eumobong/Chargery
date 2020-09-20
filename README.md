@@ -14,31 +14,31 @@ Retrieve data from chargery bms BMS24T or BMS16T or BMS8T through rs232 to USB c
 
 
 ##### Default Publish topics: 
-1 chargerybms/watthour #watthour
+1 chargerybms/watthour 
 
-2 chargerybms/amphour #amphour 
+2 chargerybms/amphour 
 
-3 chargerybms/batteryvolt #battery string voltage
+3 chargerybms/batteryvolt 
 
-4 chargerybms/cellhigh #highest cell voltage
+4 chargerybms/cellhigh 
 
-5 chargerybms/celllow #lowest cell voltage
+5 chargerybms/celllow 
 
-6 chargerybms/maxvolt #end of cell voltage
+6 chargerybms/maxvolt =maximum cell voltage
 
-7 chargerybms/current #charging or discharging current
+7 chargerybms/current 
 
 8 chargerybms/modename #modename is discharge, charge or storage
 
 9 chargerybms/modeint #0,1 or 2 corresponds to modename
 
-10 chargerybms/temp1 #temperature of sensor1
+10 chargerybms/temp1
 
-11 chargerybms/temp2 ##temperature of sensor1
+11 chargerybms/temp2 
 
-12 chargerybms/soc #state of charge
+12 chargerybms/soc 
 
-13 chargerybms/aggimped #aggregate impedance of battery cells
+13 chargerybms/aggimped =impedance of battery string
 
 
 ##### Note5: if you need individual cell voltages and cell impedances published, uncomment same in the script
