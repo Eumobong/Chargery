@@ -1,5 +1,5 @@
 # Chargery
-Retrieve data from chargery bms BMS24T or BMS16T or BMS8T through rs232 to USB cable and post to MQtt server. 
+Retrieve data from chargery BMS BMS24T or BMS16T or BMS8T through rs232 to USB cable and post to MQtt server. 
 
 
 ##### Read installation step after the following notes 
@@ -28,9 +28,9 @@ Retrieve data from chargery bms BMS24T or BMS16T or BMS8T through rs232 to USB c
 
 7 chargerybms/current 
 
-8 chargerybms/modename #modename is discharge, charge or storage
+8 chargerybms/modename =modename is discharge, charge or storage
 
-9 chargerybms/modeint #0,1 or 2 corresponds to modename
+9 chargerybms/modeint =0,1 or 2 corresponds to modename
 
 10 chargerybms/temp1
 
