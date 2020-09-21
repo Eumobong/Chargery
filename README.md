@@ -61,7 +61,7 @@ It is assumed that you have mqtt server, pyserial paho-mqtt installed
 
 3) run the following commands  in terminal
 
-	sudo chomd 644 /lib/systemd/system/chargery.service
+	sudo chmod 644 /lib/systemd/system/chargery.service
 	
 	sudo systemctl daemon-reload
 	
