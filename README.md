@@ -2,7 +2,7 @@
 Program runs as a service at the background without user intervention and continously logs data from chargery bms to your emoncms server and publishes to specific mqtt topics.
 
 #### ** Background**
-This was developed following pioneer work by gentlemen listed at the end of this file in a diy solar forum. Having used and enjoyed [solpiplog by nuno](https://github.com/njfaria/SolPipLog), I needed logging from chargery bms as i felt Victron BMS is doing what the bms already has built-in. With this I can monitor my setup, and optionally control my inverter.
+This was developed following pioneering work by gentlemen listed at the end of this file in a diy solar forum. Having used and enjoyed [solpiplog by nuno](https://github.com/njfaria/SolPipLog), I needed logging from chargery bms as i felt Victron BMS is doing what the bms already has built-in. With this I can monitor my setup, and optionally control my inverter.
 
 #### ** MQTT topics published to**
 1. chargerybms/watthour 
