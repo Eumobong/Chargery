@@ -44,10 +44,15 @@ For raspberry pi users,
 1. clone the repository to "/home/pi" directory
 2. execute setup.sh
 3. edit "/home/pi/chargery.py as follows:
-emoncmsApiKey = "ae4352drehuy65756i897ba7f"; value should be your emoncms api write key
-emoncmsURL = "http://127.0.0.1:8081/input/post"; change to your emoncms ip address or url and port
-mqttURL = "127.0.0.1"; change to your mqtt server address
-mqttPort = "1883"; change to your mqtt server port
+
+emoncmsApiKey = "ae4352drehuy65756i897ba7f"; value should be your emoncms api write key. 
+
+emoncmsURL = "http://127.0.0.1:8081/input/post"; change to your emoncms ip address or url and port. 
+
+mqttURL = "127.0.0.1"; change to your mqtt server address. 
+
+mqttPort = "1883"; change to your mqtt server port. 
+
 devName = '/dev/ttyUSB0'; #change to port name that your serial device is connected to
 
 #### **Testing **
@@ -55,4 +60,4 @@ Connect TX and RX of the serial cable while no bms is attached.
 In terminal, run sudo python /home/pi/chargery.py -t
 
 
-Special credit to nuno, Joe Elliot, [Craig, Steve_S, BarkingSpider, mariovanwyk1, cass3825 & others](https://diysolarforum.com/threads/chargery-bms-communications.5905/)
+**Special credit to nuno, Joe Elliot, [Craig, Steve_S, BarkingSpider, mariovanwyk1, cass3825 & others](https://diysolarforum.com/threads/chargery-bms-communications.5905/)
