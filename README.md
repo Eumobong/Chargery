@@ -1,76 +1,58 @@
-# Chargery
-Retrieve data from chargery BMS BMS24T or BMS16T or BMS8T through rs232 to USB cable and post to MQtt server. 
+# Logger for Chargery Battery Monitor BMS8T, BMS16T and BMS24T.
+Program runs as a service at the background without user intervention and continously logs data from chargery bms to your emoncms server and publishes to specific mqtt topics.
+
+#### ** Background**
+This was developed following pioneer work by gentlemen listed at the end of this file in a diy solar forum. Having used and enjoyed [solpiplog by nuno](https://github.com/njfaria/SolPipLog), I needed logging from chargery bms as i felt Victron BMS is doing what the bms already has built-in. With this I can monitor my setup, and optionally control my inverter.
+
+#### ** MQTT topics published to**
+1. chargerybms/watthour 
+2. chargerybms/amphour 
+3. chargerybms/batteryvolt 
+4. chargerybms/cellhigh 
+5. chargerybms/celllow 
+6. chargerybms/maxvolt 
+7. chargerybms/current 
+8. chargerybms/modename 
+9. chargerybms/modeint 
+10. chargerybms/temp1 
+11. chargerybms/temp2 
+12. chargerybms/soc 
+13. chargerybms/aggimped
+
+#### ** Values sent to emoncms on node 40**
+1. watthour 
+2. amphour 
+3. batteryvolt 
+4. cellhigh 
+5. celllow 
+6. maxvolt 
+7. current 
+8. modeint 
+9. temp1 
+10. temp2 
+11. soc 
+
+#### ** Dependecies**
+1. pyserial: run sudo pip install pyserial
+2. paho-mqtt: run sudo pip install paho-mqtt
+3. requests: run sudo pip install requests
+4. emoncms and mqtt server
 
 
-##### Read installation step after the following notes 
+#### ** Installation **
+For raspberry pi users,
+1. clone the repository to "/home/pi" directory
+2. execute setup.sh
+3. edit "/home/pi/chargery.py as follows:
+emoncmsApiKey = "ae4352drehuy65756i897ba7f"; value should be your emoncms api write key
+emoncmsURL = "http://127.0.0.1:8081/input/post"; change to your emoncms ip address or url and port
+mqttURL = "127.0.0.1"; change to your mqtt server address
+mqttPort = "1883"; change to your mqtt server port
+devName = '/dev/ttyUSB0'; #change to port name that your serial device is connected to
 
-##### Note1: change the line devName = '/dev/ttyUSB0' to suit your USB connection port
-
-##### Note2: if your MQTT server is password protected uncomment client.username_pw_set and replace username and password strings with your login detiails
-
-##### Note3: if your mqtt server is on another system replace the ipaddress 127.0.01 and port 1883 as the case may be
-
-##### Note4: you have to install paho-mqtt using pip; run sudo pip install paho-mqtt
-
-
-##### Default Publish topics: 
-1 chargerybms/watthour 
-
-2 chargerybms/amphour 
-
-3 chargerybms/batteryvolt 
-
-4 chargerybms/cellhigh 
-
-5 chargerybms/celllow 
-
-6 chargerybms/maxvolt =maximum cell voltage
-
-7 chargerybms/current 
-
-8 chargerybms/modename =modename is discharge, charge or storage
-
-9 chargerybms/modeint =0,1 or 2 corresponds to modename
-
-10 chargerybms/temp1
-
-11 chargerybms/temp2 
-
-12 chargerybms/soc 
-
-13 chargerybms/aggimped =impedance of battery string
+#### **Testing **
+Connect TX and RX of the serial cable while no bms is attached. 
+In terminal, run sudo python /home/pi/chargery.py -t
 
 
-##### Note5: if you need individual cell voltages and cell impedances published, uncomment same in the script
-
-##### Note6: if you don't have pyserial install from pip
-
-
-## Installation steps:
-
-It is assumed that you have mqtt server, pyserial paho-mqtt installed
-
-1a) copy chargery.py to /home/pi directory
-
-1b) create a a log file named chargery.log in /home/pi
-
-1c) make the log file writable if it's not
-
-
-2) copy chargery.service to /lib/systemd/system directory
-
-3) run the following commands  in terminal
-
-	sudo chmod 644 /lib/systemd/system/chargery.service
-	
-	sudo systemctl daemon-reload
-	
-	sudo systemctl chargery.service
-	
-	sudo systemctl start chargery.service
-	
-
-
-###### Give feedback so we can improve on it.
-
-
+Special credit to nuno, Joe Elliot, [Craig, Steve_S, BarkingSpider, mariovanwyk1, cass3825 & others](https://diysolarforum.com/threads/chargery-bms-communications.5905/)

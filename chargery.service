@@ -5,6 +5,7 @@ After=multi-user.target
 [Service]
 Type=idle
 ExecStart=/usr/bin/python /home/pi/chargery.py > /home/pi/chargery.log 2>&1
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
