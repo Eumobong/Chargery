@@ -305,34 +305,34 @@ while (ser.is_open):
             aggChecksum &= 255
             if (debug):
                 print("data:",hexLine[bite:bite+2], " aggChecksum:",hex(aggChecksum))
-        if (debug):
-            print("Checksum:",hexLine[bite+2:bite+4]," and aggChecksum:",hex(aggChecksum))
-            print("Read datalength:",str(dataLen)," and expected datalength:",str(int(byteD, 16)*2-8))
-        if ((aggChecksum == int(hexLine[bite+2:bite+4], 16)) and ((int(byteD, 16)*2-8) == dataLen)):    #good checksum and datalength is same as specified
-            if (gotSysData and gotCellData):
-                if (debug): print(" Cell and System data gotten")
-                gotSysData  = False;
-                gotCellData = False;
-            if (gotIRData):
-                if (debug): print(" IR data gotten")
-                gotIRData = False;
-            if (byteC == "56"):
-                if (debug): print("Found Cell block", byteC, hexLine)
-                if (not gotCellData):                                    
-                    getCellData(hexLine)                                    
-            elif (byteC == "57"):
-                if (debug): print("Found System block", byteC, hexLine)
-                if (not gotSysData):
-                    getSysData(hexLine)
-                                    
-            elif (byteC == "58"):
-                if (debug): print("Found System block", byteC, hexLine)
-                if (not gotIRData):
-                    getIRData(hexLine)
-            else:
-                if (debug): print("Found Unexpected command block", byteC, hexLine)     
-        else:
-            if (debug): print("Bad Checksum or data truncated")
+		if (debug):
+		    print("Checksum:",hexLine[bite+2:bite+4]," and aggChecksum:",hex(aggChecksum))
+		    print("Read datalength:",str(dataLen)," and expected datalength:",str(int(byteD, 16)*2-8))
+		if ((aggChecksum == int(hexLine[bite+2:bite+4], 16)) and ((int(byteD, 16)*2-8) == dataLen)):    #good checksum and datalength is same as specified
+		    if (gotSysData and gotCellData):
+			if (debug): print(" Cell and System data gotten")
+			gotSysData  = False;
+			gotCellData = False;
+		    if (gotIRData):
+			if (debug): print(" IR data gotten")
+			gotIRData = False;
+		    if (byteC == "56"):
+			if (debug): print("Found Cell block", byteC, hexLine)
+			if (not gotCellData):                                    
+			    getCellData(hexLine)                                    
+		    elif (byteC == "57"):
+			if (debug): print("Found System block", byteC, hexLine)
+			if (not gotSysData):
+			    getSysData(hexLine)
+
+		    elif (byteC == "58"):
+			if (debug): print("Found System block", byteC, hexLine)
+			if (not gotIRData):
+			    getIRData(hexLine)
+		    else:
+			if (debug): print("Found Unexpected command block", byteC, hexLine)     
+		else:
+		    if (debug): print("Bad Checksum or data truncated")
 client.disconnect()
 client.loop_stop()
 ser.close()
